@@ -1,0 +1,17 @@
+.container {
+  margin: 20px;
+}
+
+.cardWrapper {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cardWrapper:hover {
+  transform: scale(1.05);
+}
+
+.ant-row {
+  margin-bottom: 20px;
+}

@@ -4,60 +4,89 @@ import React from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import Image from "next/image";
+import { useRouter } from 'next/navigation';
+import logoSatuSehat from '../../assets/logo-satusehat.png';
+import styles from './navbar.module.css';
 
 const { Header, Content, Sider } = Layout;
 
-const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
-  key,
-  label: `nav ${key}`,
+const items1: MenuProps['items'] = [
+  { id: '1', name: 'Beranda' },
+  { id: '2', name: 'Produk' },
+  { id: '3', name: 'Mitra' },
+  { id: '4', name: 'Pusat Bantuan' }
+].map((data) => ({
+  key: data.id,
+  label: data.name,
 }));
-
-const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
-  (icon, index) => {
-    const key = String(index + 1);
-
-    return {
-      key: `sub${key}`,
-      icon: React.createElement(icon),
-      label: `subnav ${key}`,
-
-      children: new Array(4).fill(null).map((_, j) => {
-        const subKey = index * 4 + j + 1;
-        return {
-          key: subKey,
-          label: `option${subKey}`,
-        };
-      }),
-    };
-  },
-);
 
 interface Props {
   children: React.ReactNode,
+  selectedNav: string,
+  itemsBread: BreadItemNav[],
 }
 
 const Navbar: React.FC<Props> = (props: Props) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  const router = useRouter();
+
+  const items2: MenuProps['items'] = [
+    { name: 'Resume Medis', icon: LaptopOutlined, key: 'rm', link: '/resume-medis' },
+    { name: 'Catatan Kesehatan', icon: LaptopOutlined, key: 'ck', link: '' },
+    { name: 'Deteksi Resiko Penyakit', icon: LaptopOutlined, key: 'drp', link: '' },
+    { name: 'Vaksinasi & Imunisasi', icon: LaptopOutlined, key: 'vi', link: '' },
+    { name: 'Kesehatan Anak', icon: LaptopOutlined, key: 'ka', link: '' },
+    { name: 'Kesehatan Kehamilan', icon: LaptopOutlined, key: 'rk', link: '' },
+    { name: 'Covid 19', icon: LaptopOutlined, key: 'c19', link: '' },
+    { name: 'Cari Layanan Kesehatan', icon: LaptopOutlined, key: 'cls', link: '' },
+    { name: 'Layanan Obat dan Vitamin', icon: LaptopOutlined, key: 'lov', link: '' },
+  ].map(
+    (data, index) => {
+      return {
+        key: data.key,
+        icon: React.createElement(data.icon),
+        label: data.name,
+        onClick: () =>  router.push(data.link),
+      };
+    },
+  );
+
 
   return (
     <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center' }}>
-        <div className="demo-logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={items1}
-          style={{ flex: 1, minWidth: 0 }}
-        />
+      <Header style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+        <div
+          style={{
+            display: 'grid',
+            flex: 1,
+            gridTemplateColumns: '10% 75% 1fr',
+            background: colorBgContainer,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div className={styles.logo}>
+            <Image src={logoSatuSehat} alt="Satu Sehat" />
+          </div>
+          <div>
+            <Menu
+              mode="horizontal"
+              defaultSelectedKeys={['2']}
+              style={{ flex: 1, minWidth: 0 }}
+              items={items1}
+            />
+          </div>
+          <div></div>
+        </div>
       </Header>
       <Layout>
-        <Sider width={200} style={{ background: colorBgContainer }}>
+        <Sider width={270} style={{ background: colorBgContainer }}>
           <Menu
             mode="inline"
-            defaultSelectedKeys={['1']}
+            defaultSelectedKeys={[props.selectedNav]}
             defaultOpenKeys={['sub1']}
             style={{ height: '100%', borderRight: 0 }}
             items={items2}
@@ -65,14 +94,14 @@ const Navbar: React.FC<Props> = (props: Props) => {
         </Sider>
         <Layout style={{ padding: '0 24px 24px' }}>
           <Breadcrumb
-            items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}
+            items={props.itemsBread}
             style={{ margin: '16px 0' }}
           />
           <Content
             style={{
               padding: 24,
               margin: 0,
-              minHeight: 280,
+              minHeight: '100vh',
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}

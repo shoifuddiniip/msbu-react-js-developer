@@ -16,6 +16,7 @@
     "@tanstack/react-query-devtools": "^5.65.1",
     "@zeit/next-less": "^1.0.1",
     "antd": "^5.23.3",
+    "axios": "^1.7.9",
     "less": "^4.2.2",
     "next": "15.1.6",
     "next-plugin-antd-less": "^1.8.0",

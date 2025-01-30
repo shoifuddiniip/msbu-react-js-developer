@@ -1,0 +1,3 @@
+interface BreadItemNav {
+  title: string,
+}
