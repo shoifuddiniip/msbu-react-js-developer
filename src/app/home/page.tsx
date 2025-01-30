@@ -15,27 +15,8 @@ export default function HomePage() {
   if (isError) return <div>Sorry There was an Error</div>;
 
   return (
-    // <div className="container mx-auto">
-    //   <h1 className="p-5 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white text-center font-bold text-4xl">
-    //     React Query Movies
-    //   </h1>
-    //   <Button type="primary"/>
-    //   <div className="grid grid-cols-4 gap-4 p-10">
-    //     {data?.results?.map(
-    //       (movie: { id: number; title: string; poster_path: string }, idx: number) => {
-    //         return (
-    //           <Card key={idx} style={{maxWidth: 100}}>
-    //             <div>{"movie" + movie.id}</div>
-    //             <div>{movie.title}</div>
-    //             <div>{movie.poster_path}</div>
-    //           </Card>
-    //         );
-    //       }
-    //     )}
-    //   </div>
-    // </div>
-    <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-    <h1 className="p-5" style={{ background: 'linear-gradient(to right, #4c6ef5, #d03a6d)', color: 'white', textAlign: 'center', fontWeight: 'bold', fontSize: '2rem' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <h1 style={{ background: 'linear-gradient(to right, #4c6ef5, #d03a6d)', color: 'white', textAlign: 'center', fontWeight: 'bold', fontSize: '2rem' }}>
       React Query Movies
     </h1>
 
@@ -50,9 +31,9 @@ export default function HomePage() {
             style={{ backgroundColor: '#1a1a1a', color: 'white' }}
           >
             <Card.Meta
-              title={movie.title}
+              title={<div style={{color: 'white'}}>{movie.title}</div>}              
               description={
-                <div>
+                <div style={{color: 'white'}}>
                   <p>{movie.release_date}</p>
                   <p>{movie.overview}</p>
                 </div>

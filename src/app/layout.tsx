@@ -29,13 +29,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ margin: 'unset' }}
       >
         <ReactQueryProvider>
           <ConfigProvider theme={theme}>
-
-            {/* <AntdRegistry> */}
             {children}
-            {/* </AntdRegistry> */}
           </ConfigProvider>
         </ReactQueryProvider>
       </body>
