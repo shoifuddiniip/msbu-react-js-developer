@@ -1,19 +1,14 @@
 import axios from 'axios';
-import { TOKEN } from './token';
 
-async function getData(pageParam?: number) {
+async function getData() {
   const options = {
     withCredentials: true, // Needed if using authentication
     headers: {
       accept: "application/json",
-      Authorization: `Bearer ${TOKEN}`,
+      "Content-Type" : "application/x-www-form-urlencoded",
+      Authorization: `Bearer ff6w0jlfCdv59BK8l7swEuhQ8pGi`,
     },
   };
-
-  const size = 10;
-  pageParam = 1;
-
-  const queryParams = new URLSearchParams({ page: pageParam.toString(), size: size.toString(), product_type: 'farmasi' });
 
   try {
     const response = await axios.get(
@@ -27,6 +22,6 @@ async function getData(pageParam?: number) {
 }
 
 export default async function getProducts() {
-  const data = await getData(1);
+  const data = await getData();
   return data;
 }

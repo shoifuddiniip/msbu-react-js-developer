@@ -1,20 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Card, Col, Row, Spin } from 'antd';
-import { useQuery, useInfiniteQuery } from '@tanstack/react-query'
+import React from 'react';
+// import { useQuery } from '@tanstack/react-query'
 import NavBar from "../../components/NavBar";
-import getProducts from '../../services/products';
-import styles from './resumemedis.module.css';
-
-const { Meta } = Card;
-
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  imageUrl: string;
-}
+// import getProducts from '../../services/products';
 
 
 export default function Home() {
@@ -32,6 +21,12 @@ export default function Home() {
   //     fetchNextPage();
   //   }
   // };
+
+    // const { data, isLoading, isError } = useQuery({
+    //   queryFn: async () => await getProducts(),
+    //   queryKey: ["movies"], //Array according to Documentation
+    // });
+  
 
   return (
     <>

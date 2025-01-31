@@ -1,7 +1,11 @@
 "use client";
 
 import React from 'react';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import { 
+  LaptopOutlined, 
+  // NotificationOutlined, 
+  // UserOutlined, 
+} from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import Image from "next/image";
@@ -44,7 +48,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
     { name: 'Cari Layanan Kesehatan', icon: LaptopOutlined, key: 'cls', link: '' },
     { name: 'Layanan Obat dan Vitamin', icon: LaptopOutlined, key: 'lov', link: '' },
   ].map(
-    (data, index) => {
+    (data) => {
       return {
         key: data.key,
         icon: React.createElement(data.icon),
