@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { 
-  LaptopOutlined, 
+  DesktopOutlined, 
   // NotificationOutlined, 
   // UserOutlined, 
+  FileDoneOutlined,
+  ExperimentOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
@@ -38,15 +40,15 @@ const Navbar: React.FC<Props> = (props: Props) => {
   const router = useRouter();
 
   const items2: MenuProps['items'] = [
-    { name: 'Resume Medis', icon: LaptopOutlined, key: 'rm', link: '/resume-medis' },
-    { name: 'Catatan Kesehatan', icon: LaptopOutlined, key: 'ck', link: '' },
-    { name: 'Deteksi Resiko Penyakit', icon: LaptopOutlined, key: 'drp', link: '' },
-    { name: 'Vaksinasi & Imunisasi', icon: LaptopOutlined, key: 'vi', link: '' },
-    { name: 'Kesehatan Anak', icon: LaptopOutlined, key: 'ka', link: '' },
-    { name: 'Kesehatan Kehamilan', icon: LaptopOutlined, key: 'rk', link: '' },
-    { name: 'Covid 19', icon: LaptopOutlined, key: 'c19', link: '' },
-    { name: 'Cari Layanan Kesehatan', icon: LaptopOutlined, key: 'cls', link: '' },
-    { name: 'Layanan Obat dan Vitamin', icon: LaptopOutlined, key: 'lov', link: '' },
+    { name: 'Resume Medis', icon: FileDoneOutlined, key: 'rm', link: '/resume-medis' },
+    { name: 'Catatan Kesehatan', icon: FileDoneOutlined, key: 'ck', link: '/catatan-kesehatan' },
+    { name: 'Deteksi Resiko Penyakit', icon: ExperimentOutlined, key: 'drp', link: '' },
+    { name: 'Vaksinasi & Imunisasi', icon: ExperimentOutlined, key: 'vi', link: '' },
+    { name: 'Kesehatan Anak', icon: FileDoneOutlined, key: 'ka', link: '' },
+    { name: 'Kesehatan Kehamilan', icon: FileDoneOutlined, key: 'rk', link: '' },
+    { name: 'Covid 19', icon: ExperimentOutlined, key: 'c19', link: '' },
+    { name: 'Cari Layanan Kesehatan', icon: ExperimentOutlined, key: 'cls', link: '' },
+    { name: 'Layanan Obat dan Vitamin', icon: DesktopOutlined, key: 'lov', link: '' },
   ].map(
     (data) => {
       return {

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 // import { useQuery } from '@tanstack/react-query'
 import NavBar from "../../components/NavBar";
+import TruncatedText from "../../components/elements/TruncatedText";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Card, Col, Row } from "antd";
@@ -19,11 +20,12 @@ import card4 from "@/assets/radiography.svg";
 //   { id: 4, title: "Test Lab & Radiologi", description: "This is the fourth card.", image: "/images/card4.jpg", link: "/details/4" },
 // ];
 
+const desc = "This is column forLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel neque id sapien mattis egestas. Praesent imperdiet tellus vitae finibus ultrices. Morbi tempor sapien nec risus pharetra, vitae commodo magna semper. ";
 const data = [
-  { id: 1, title: "Satu DNA", description: "This is the first card.", image: card1, link: "/details/1" },
-  { id: 2, title: "Healt Pass", description: "This is the second card.", image: card2, link: "/details/2" },
-  { id: 3, title: "Rawat Jalan", description: "This is the third card.", image: card3, link: "/details/3" },
-  { id: 4, title: "Test Lab & Radiologi", description: "This is the fourth card.", image: card4, link: "/details/4" },
+  { id: 1, title: "Satu DNA", description: desc, image: card1, link: "/details/1" },
+  { id: 2, title: "Healt Pass", description: desc, image: card2, link: "/details/2" },
+  { id: 3, title: "Rawat Jalan", description: desc, image: card3, link: "/details/3" },
+  { id: 4, title: "Test Lab & Radiologi", description: desc, image: card4, link: "/details/4" },
 ];
 
 
@@ -69,7 +71,7 @@ export default function Home() {
                   onMouseEnter={() => setHoveredCard(item.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                   cover={
-                    <div style={{ width: "100%", height: "auto", position: "relative", aspectRatio: "16/9", marginTop:20 }}>
+                    <div style={{ width: "100%", height: "auto", position: "relative", aspectRatio: "16/9", marginTop: 20 }}>
                       <Image alt={item.title} src={item.image} layout="fill" sizes="(max-width: 600px) 100vw, 50vw" style={{ borderRadius: "8px" }} />
                     </div>
                   }
@@ -83,7 +85,7 @@ export default function Home() {
                     transition: "all 0.3s ease-in-out",
                   }}
                 >
-                  <p>{item.description}</p>
+                  <TruncatedText text={item.description} size={50} />
                 </Card>
               </Col>
             );
