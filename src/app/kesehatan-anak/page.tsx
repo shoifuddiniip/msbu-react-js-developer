@@ -15,7 +15,7 @@ const data = [
 ];
 
 
-export default function DiseaseRiskDetection() {
+export default function ChildrensHealth() {
   const [selectedCard, setSelectedCard] = useState<number>(-1);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const router = useRouter();
@@ -27,7 +27,7 @@ export default function DiseaseRiskDetection() {
 
   return (
     <>
-      <NavBar selectedNav="ka" itemsBread={[{ title: 'Home' }, { title: 'Kesehatan Imunisasi' }]}>
+      <NavBar selectedNav="ka" itemsBread={[{ title: 'Home' }, { title: 'Kesehatan Anak' }]}>
         <Row gutter={[16, 16]}>
           {data.map((item) => {
             return (

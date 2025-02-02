@@ -10,12 +10,11 @@ import card1 from "@/assets/healthcare2.svg";
 
 const desc = "This is column forLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel neque id sapien mattis egestas. Praesent imperdiet tellus vitae finibus ultrices. Morbi tempor sapien nec risus pharetra, vitae commodo magna semper. ";
 const data = [
-  { id: 1, title: "Sertifikat Vaksin", description: desc, image: card1, link: "/details/1" },
-  { id: 2, title: "Daftar Vaksin", description: desc, image: card1, link: "/details/1" },
+  { id: 1, title: "Riwayat Kehamilan", description: desc, image: card1, link: "/details/1" },
 ];
 
 
-export default function VaccinationImmunization() {
+export default function PregnancyHealth() {
   const [selectedCard, setSelectedCard] = useState<number>(-1);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const router = useRouter();
@@ -27,7 +26,7 @@ export default function VaccinationImmunization() {
 
   return (
     <>
-      <NavBar selectedNav="vi" itemsBread={[{ title: 'Home' }, { title: 'Vaksinasi & Imunisasi' }]}>
+      <NavBar selectedNav="kk" itemsBread={[{ title: 'Home' }, { title: 'Kesehatan Kehamilan' }]}>
         <Row gutter={[16, 16]}>
           {data.map((item) => {
             return (

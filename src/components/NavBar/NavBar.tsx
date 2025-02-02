@@ -45,7 +45,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
     { name: 'Deteksi Resiko Penyakit', icon: ExperimentOutlined, key: 'drp', link: '/deteksi-risiko-penyakit' },
     { name: 'Vaksinasi & Imunisasi', icon: ExperimentOutlined, key: 'vi', link: '/vaksinasi-dan-imunisasi' },
     { name: 'Kesehatan Anak', icon: FileDoneOutlined, key: 'ka', link: '/kesehatan-anak' },
-    { name: 'Kesehatan Kehamilan', icon: FileDoneOutlined, key: 'rk', link: '' },
+    { name: 'Kesehatan Kehamilan', icon: FileDoneOutlined, key: 'kk', link: '/kesehatan-kehamilan' },
     { name: 'Covid 19', icon: ExperimentOutlined, key: 'c19', link: '' },
     { name: 'Cari Layanan Kesehatan', icon: ExperimentOutlined, key: 'cls', link: '' },
     { name: 'Layanan Obat dan Vitamin', icon: DesktopOutlined, key: 'lov', link: '' },
