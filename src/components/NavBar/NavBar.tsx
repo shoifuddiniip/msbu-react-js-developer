@@ -42,7 +42,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
   const items2: MenuProps['items'] = [
     { name: 'Resume Medis', icon: FileDoneOutlined, key: 'rm', link: '/resume-medis' },
     { name: 'Catatan Kesehatan', icon: FileDoneOutlined, key: 'ck', link: '/catatan-kesehatan' },
-    { name: 'Deteksi Resiko Penyakit', icon: ExperimentOutlined, key: 'drp', link: '' },
+    { name: 'Deteksi Resiko Penyakit', icon: ExperimentOutlined, key: 'drp', link: '/deteksi-risiko-penyakit' },
     { name: 'Vaksinasi & Imunisasi', icon: ExperimentOutlined, key: 'vi', link: '' },
     { name: 'Kesehatan Anak', icon: FileDoneOutlined, key: 'ka', link: '' },
     { name: 'Kesehatan Kehamilan', icon: FileDoneOutlined, key: 'rk', link: '' },
