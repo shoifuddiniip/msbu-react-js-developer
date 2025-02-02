@@ -2,16 +2,18 @@
 
 import React, { useState } from 'react';
 import NavBar from "../../components/NavBar";
-import TruncatedText from "../../components/elements/TruncatedText";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Card, Col, Row } from "antd";
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import TruncatedText from "../../components/elements/TruncatedText";
 import card1 from "@/assets/healthcare2.svg";
 
 const desc = "This is column forLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel neque id sapien mattis egestas. Praesent imperdiet tellus vitae finibus ultrices. Morbi tempor sapien nec risus pharetra, vitae commodo magna semper. ";
 const data = [
-  { id: 1, title: "Pengingat Minum Obat", description: desc, image: card1, link: "/details/1" },
-  { id: 2, title: "Cari Obat", description: desc, image: card1, link: "/cari-obat" },
+  { id: 1, title: "Vitamin D", description: desc, image: card1, link: "" },
+  { id: 2, title: "Vitamin C", description: desc, image: card1, link: "" },
+  { id: 3, title: "Vitamin B", description: desc, image: card1, link: "" },
 ];
 
 
@@ -27,7 +29,7 @@ export default function MedicineServices() {
 
   return (
     <>
-      <NavBar selectedNav="lov" itemsBread={[{ title: 'Home' }, { title: 'Layanan Obat dan Vitamin' }]}>
+      <NavBar selectedNav="lov" itemsBread={[{ title: 'Home' }, { title: 'Layanan Obat dan Vitamin' }, { title: 'Cari Obat' }]}>
         <Row gutter={[16, 16]}>
           {data.map((item) => {
             return (
@@ -55,6 +57,11 @@ export default function MedicineServices() {
                       />
                     </div>
                   }
+                  actions={[
+                    <SettingOutlined key="setting" />,
+                    <EditOutlined key="edit" />,
+                    <EllipsisOutlined key="ellipsis" />,
+                  ]}
                   title={item.title}
                   bordered={false}
                   style={{

@@ -11,7 +11,7 @@ import card1 from "@/assets/healthcare2.svg";
 const desc = "This is column forLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel neque id sapien mattis egestas. Praesent imperdiet tellus vitae finibus ultrices. Morbi tempor sapien nec risus pharetra, vitae commodo magna semper. ";
 const data = [
   { id: 1, title: "Cari Nakes", description: desc, image: card1, link: "/details/1" },
-  { id: 2, title: "Cari Obat", description: desc, image: card1, link: "/details/1" },
+  { id: 2, title: "Cari Obat", description: desc, image: card1, link: "/cari-obat" },
   { id: 3, title: "Cari Rawat Inap", description: desc, image: card1, link: "/details/1" },
   { id: 4, title: "Lokasi Verifikasi (KYC)", description: desc, image: card1, link: "/details/1" },
 ];
