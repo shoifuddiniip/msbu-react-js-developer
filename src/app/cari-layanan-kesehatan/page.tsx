@@ -10,17 +10,14 @@ import card1 from "@/assets/healthcare2.svg";
 
 const desc = "This is column forLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel neque id sapien mattis egestas. Praesent imperdiet tellus vitae finibus ultrices. Morbi tempor sapien nec risus pharetra, vitae commodo magna semper. ";
 const data = [
-  { id: 1, title: "Verifikator Check-in", description: desc, image: card1, link: "/details/1" },
-  { id: 2, title: "Sertifikat Vaksin", description: desc, image: card1, link: "/details/1" },
-  { id: 3, title: "Hasil Tes COVID-19", description: desc, image: card1, link: "/details/1" },
-  { id: 4, title: "Daftar Vaksin COVID-19", description: desc, image: card1, link: "/details/1" },
-  { id: 5, title: "Vaksin Non-Indonesia", description: desc, image: card1, link: "/details/1" },
-  { id: 6, title: "Daftar Lab Antigen", description: desc, image: card1, link: "/details/1" },
-  { id: 7, title: "Tiket Vaksin", description: desc, image: card1, link: "/details/1" },
+  { id: 1, title: "Cari Nakes", description: desc, image: card1, link: "/details/1" },
+  { id: 2, title: "Cari Obat", description: desc, image: card1, link: "/details/1" },
+  { id: 3, title: "Cari Rawat Inap", description: desc, image: card1, link: "/details/1" },
+  { id: 4, title: "Lokasi Verifikasi (KYC)", description: desc, image: card1, link: "/details/1" },
 ];
 
 
-export default function Covid19() {
+export default function HealthServices() {
   const [selectedCard, setSelectedCard] = useState<number>(-1);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const router = useRouter();
@@ -32,7 +29,7 @@ export default function Covid19() {
 
   return (
     <>
-      <NavBar selectedNav="c19" itemsBread={[{ title: 'Home' }, { title: 'COVID-19' }]}>
+      <NavBar selectedNav="cls" itemsBread={[{ title: 'Home' }, { title: 'Cari Layanan Kesehatan' }]}>
         <Row gutter={[16, 16]}>
           {data.map((item) => {
             return (

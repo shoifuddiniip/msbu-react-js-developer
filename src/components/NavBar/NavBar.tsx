@@ -47,7 +47,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
     { name: 'Kesehatan Anak', icon: FileDoneOutlined, key: 'ka', link: '/kesehatan-anak' },
     { name: 'Kesehatan Kehamilan', icon: FileDoneOutlined, key: 'kk', link: '/kesehatan-kehamilan' },
     { name: 'Covid 19', icon: ExperimentOutlined, key: 'c19', link: '/covid-19' },
-    { name: 'Cari Layanan Kesehatan', icon: ExperimentOutlined, key: 'cls', link: '' },
+    { name: 'Cari Layanan Kesehatan', icon: ExperimentOutlined, key: 'cls', link: '/cari-layanan-kesehatan' },
     { name: 'Layanan Obat dan Vitamin', icon: DesktopOutlined, key: 'lov', link: '' },
   ].map(
     (data) => {
