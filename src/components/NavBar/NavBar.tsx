@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
-import { 
-  DesktopOutlined, 
+import React, { useState } from 'react';
+import {
+  DesktopOutlined,
   // NotificationOutlined, 
   // UserOutlined, 
   FileDoneOutlined,
@@ -12,6 +12,8 @@ import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import LoginButton from '../elements/LoginButton/LoginButton';
+import LoginModal from './LoginModal';
 import logoSatuSehat from '../../assets/logo-satusehat.png';
 import styles from './navbar.module.css';
 
@@ -34,6 +36,8 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = (props: Props) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -55,7 +59,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
         key: data.key,
         icon: React.createElement(data.icon),
         label: data.name,
-        onClick: () =>  router.push(data.link),
+        onClick: () => router.push(data.link),
       };
     },
   );
@@ -68,7 +72,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
           style={{
             display: 'grid',
             flex: 1,
-            gridTemplateColumns: '10% 75% 1fr',
+            gridTemplateColumns: '10% 1fr 10%',
             background: colorBgContainer,
             justifyContent: 'center',
             alignItems: 'center',
@@ -85,7 +89,16 @@ const Navbar: React.FC<Props> = (props: Props) => {
               items={items1}
             />
           </div>
-          <div></div>
+          <div className={styles.headerLogo}>
+            <LoginButton onClick={() => setModalVisible(true)} />
+            <LoginModal
+              visible={modalVisible}
+              loading={false}
+              onCancel={() => setModalVisible(false)}
+              onOke={() => console.log(0)}
+            />
+
+          </div>
         </div>
       </Header>
       <Layout>

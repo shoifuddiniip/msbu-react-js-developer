@@ -9,3 +9,9 @@
   width: 135px;
   height: 45px;
 }
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

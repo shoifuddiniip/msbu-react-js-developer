@@ -16,7 +16,6 @@ const data = [
   { id: 3, title: "Vitamin B", description: desc, image: card1, link: "" },
 ];
 
-
 export default function MedicineServices() {
   const [selectedCard, setSelectedCard] = useState<number>(-1);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
